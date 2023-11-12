@@ -54,7 +54,7 @@ class RightDrawer extends StatelessWidget {
             title: const Text('Tambah Ke Inventori'),
             // Bagian redirection ke InvFormPage
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                   context, 
                   MaterialPageRoute(
                     builder: (context) => const InvFormPage(),
