@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_devandra/widgets/right_drawer.dart';
+import 'package:flutter_devandra/screens/inv_form.dart';
+import 'package:flutter_devandra/widgets/inv_card.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -27,6 +30,7 @@ class MyHomePage extends StatelessWidget {
               ),
               backgroundColor: Colors.amber,
             ),
+            endDrawer: const RightDrawer(),
             body: SingleChildScrollView(
               // Widget wrapper yang dapat discroll
               child: Padding(
@@ -68,13 +72,7 @@ class MyHomePage extends StatelessWidget {
     }
 }
 
-class InvItem {
-  final String name;
-  final IconData icon;
-  final Color color;
 
-  InvItem(this.name, this.icon, this.color);
-}
 
 class InvCard extends StatelessWidget {
   final InvItem item;
@@ -93,6 +91,10 @@ class InvCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
+
+          if (item.name == "Tambah di Inventori") {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const InvFormPage()));
+          }
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
