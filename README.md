@@ -74,3 +74,27 @@ NPM : 2206083552 <br>
       pertama, saya akan membuat drawer yang mengandung semua shortcut ke halaman lainnya, lalu setelah itu saya buat halaman form untuk menerima input untuk masuk ke inventori, setelah itu akan dirouting bersama antara halaman utama, drawer, dan form input dengan menggunakan navigator agar dapat berpindah-pindah antara halaman. <br>
       
 </details>
+
+<details>
+   <summary>Tugas 9</summary>
+   Jawaban Pertanyaan <br>
+
+   1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON? <br>
+      Jawab : <br>
+      Kita bisa mengambil data JSON tanpa membuat model, namun hanya untuk data yang simple saja. Untuk data dengan struktur yang rumit
+   2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter. <br>
+      Jawab : <br>
+      
+   3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter. <br>
+      Jawab : <br>
+      
+   4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter. <br>
+      Jawab : <br>
+      
+   5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing. <br>
+      Jawab : <br>
+      
+   6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial). <br>
+      Jawab : <br>
+
+</details>
