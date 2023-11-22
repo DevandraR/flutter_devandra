@@ -61,31 +61,79 @@ Widget build(BuildContext context) {
                 } else {
                     return ListView.builder(
                         itemCount: snapshot.data!.length,
-                        itemBuilder: (_, index) => Container(
+                        itemBuilder: (_, index) => InkWell(
+                          onTap: () {
+                            Navigator.push(context, 
+                                MaterialPageRoute(builder: (context) => detailItem("${snapshot.data![index].fields.name}", "${snapshot.data![index].fields.amount}", "${snapshot.data![index].fields.description}")));
+                          },
+                          child: Container(
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 16, vertical: 12),
                                 padding: const EdgeInsets.all(20.0),
                                 child: Column(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                    Text(
-                                    "${snapshot.data![index].fields.name}",
-                                    style: const TextStyle(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold,
-                                    ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Text("${snapshot.data![index].fields.amount}"),
-                                    const SizedBox(height: 10),
-                                    Text(
-                                        "${snapshot.data![index].fields.description}")
-                                ],
+                                children: [ Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                          "${snapshot.data![index].fields.name}",
+                                          style: const TextStyle(
+                                              fontSize: 18.0,
+                                              fontWeight: FontWeight.bold,
+                                          ),
+                                          ),
+                                          const SizedBox(height: 10),
+                                          Text(
+                                          "${snapshot.data![index].fields.amount}"),
+                                          const SizedBox(height: 10),
+                                          Text(
+                                          "${snapshot.data![index].fields.description}"
+                                          )
+                                        ]
+                                      ),
+                                    
+                                  ],
                                 ),
-                            ));
+                            )),
+                        ); 
                     }
                 }
             }));
     }
+}
+
+class detailItem extends StatelessWidget {
+  final String name;
+  final String amount;
+  final String description;
+
+  detailItem(this.name, this.amount, this.description);
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              Text(
+                name
+              ),
+              Text(
+                amount
+              ),
+              Text(
+                description
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+
+  }
+
 }
