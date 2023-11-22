@@ -74,3 +74,34 @@ NPM : 2206083552 <br>
       pertama, saya akan membuat drawer yang mengandung semua shortcut ke halaman lainnya, lalu setelah itu saya buat halaman form untuk menerima input untuk masuk ke inventori, setelah itu akan dirouting bersama antara halaman utama, drawer, dan form input dengan menggunakan navigator agar dapat berpindah-pindah antara halaman. <br>
       
 </details>
+
+<details>
+   <summary>Tugas 9</summary>
+   Jawaban Pertanyaan <br>
+
+   1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON? <br>
+      Jawab : <br>
+      Kita bisa mengambil data JSON tanpa membuat model, namun hanya untuk data yang simple saja dan jika ingin parsing lebih cepat. Untuk data dengan struktur yang rumit, lebih baik untuk menggunakan models agar memudahkan untuk pengelolaan data. <br>
+      
+   3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter. <br>
+      Jawab : <br>
+      fungsi dari cookierequest adalah memberikan informasi mengenai request yang dilakukan oleh flutter kepada server, oleh karena itu cookierequest perlu dibagikan ke semua komponen agar semua komponen dapat dilacak hasil requestnya. <br>
+      
+   4. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter. <br>
+      Jawab : <br>
+      Pertama, kita ambil data JSON, lalu kita parsing data JSON tersebut dan kita buat object model yang sesuai dengan atribut dari JSON tersebut. setelah itu kita bisa tampilkan data JSON pada flutter, kita dapat menggunakan ListView untuk menampilkan data tersebut. <br>
+      
+   5. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter. <br>
+      Jawab : <br>
+      Pertama, setelah kita input username dan password pada UI Flutter akan dilanjutkan menuju server Django untuk diotentikasi. Setelah user terkonfirmasi oleh Django, Django akan mengirim token loggedIn kembali kepada flutter agar menampilkan home page kepada pengguna. <br>
+      
+   6. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing. <br>
+      Jawab : <br>
+      a. ProductPage : berfungsi untuk fetch data JSON dari server Django, lalu menampilkannya pada halaman di tampilan flutter <br>
+      b. LoginApp : berfungsi untuk menampilkan halaman login dan mengirim input user yang di login kepada server Django untuk diautentikasi, lalu setelah terautentikasi akan push halaman homepage. <br>
+      
+   8. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial). <br>
+      Jawab : <br>
+      Pertama, buat halaman login pada login.dart, pada halaman ini ada dua textbox untuk username dan password dan link url kepada server django unttuk login. Sementara itu, pada file authentication.py kita tambahkan fungsi login dan url routingnya. Setelah itu baru kita tambahkan halaman untuk menampilkan list dari item, pada halaman item, ada fungsi untuk fetch data dari url ke server django. Setelah fetch ada buat fungsi untuk menampilkan data di tampilan flutter. Setelah itu, kita buat method create product pada main app django dan method logout pada authentication app django. create product dirouting pada inv_form untuk membuat request saat menambahkan item baru. logout dirouting agar saat kita menekan tombol logout kita bisa keluar dari app. <br>
+
+</details>
